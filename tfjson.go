@@ -54,7 +54,7 @@ func tfjson(planfile string) (string, error) {
 	}
 	defer f.Close()
 
-	plan, err := terraform.ReadPlan(f)
+	plan, err := planfile.Open(f)
 	if err != nil {
 		return "", err
 	}
